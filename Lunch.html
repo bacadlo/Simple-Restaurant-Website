@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+</html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Lunch Program
+    </title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1> Edwin's  </h1>
+    <h1> *Lunch Restaurant* </h1>
+    <!------------------- Tab links -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Lunch')">Lunch</button>
+        <button class="tablinks" onclick="openTab(event, 'Beverage')">Beverage</button>
+        <button class="tablinks" onclick="openTab(event, 'Desert')">Deserts</button>
+    </div>
+
+    <!-------------------Lunch form------------------------>
+    <form action="lunch.php" method="post">
+        
+        <!---------Lunch tab------------------>        
+        <div id="Lunch" class="tabcontent">            
+            <br><br>
+            <div id="menu" class="menu">
+                <br>
+                <img src="../img/Lunch_img/Burrito.jpg" alt= "Burrito" class="img">
+                 Burrito
+                <img src="../img/Lunch_img/ribs.jpg" alt= "Ribs" class="img">
+                Steak
+                <img src="../img/Lunch_img/Salmon.jpg" alt= "Salmon" class="img">
+                Salmon
+                <br>
+            </div>
+            <label for="Lunch"> Choice </label>
+            <input type="text" id="lunch" name="lunch" placeholder="Name" required>            
+        </div> 
+
+        <!---------Beverage tab------------------>
+        <div id="Beverage" class="tabcontent">        
+        <br><br>
+        <div id="menu" class="menu">
+            <br>
+            <img src="../img/Lunch_img/coke.jpg" alt="Salmon" class="img">
+            Coke
+            <img src="../img/Lunch_img/AJ.jpg" alt="Salmon" class="img">
+            Apple Juice
+            <img src="../img/Lunch_img/beer.jpg" alt="Salmon" class="img">
+            Beer
+            <br>
+        </div>        
+        <label for="Beverage"> Choice </label>
+        <input type="text" id="beverage" name="beverage" placeholder="Name" required>        
+        </div>
+
+        <!---------Desert tab------------------>
+        <div id="Desert" class="tabcontent">        
+        <br><br>
+        <div id="menu" class="menu">
+            <br>
+            <img src="../img/Lunch_img/creme.jpeg" alt="Creme Brule" class="img">
+            Creame Brule
+            <img src="../img/Lunch_img/ice.jpg" alt="Ice Cream" class="img">
+            Ice Cream
+            <img src="../img/Lunch_img/cake.webp" alt="Chococlate cake" class="img">
+            Chococlate cake
+            <br>
+        </div>
+        <label for="Desert"> Choice </label>
+        <input type="text" id="desert" name="desert" placeholder="Name" required>        
+        </div>
+        <!---------Submit button------------------>
+        <input type="submit" value="Submit" id="submit" class="submit_btn">
+    </form>
+
+
+</body>
+
+</html>
+
+<script>
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
